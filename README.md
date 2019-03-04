@@ -29,5 +29,5 @@ Related
 License
 ------------------------------------------------------------------------------
 
-qunit-dom is developed by and &copy; [simplabs GmbH](http://simplabs.com) and
-contributors. It is released under the [MIT License](https://github.com/simplabs/qunit-dom/blob/master/LICENSE.md).
+emblem-migrator is developed by and &copy; [simplabs GmbH](http://simplabs.com) and
+contributors. It is released under the [MIT License](https://github.com/simplabs/emblem-migrator/blob/master/LICENSE.md).
