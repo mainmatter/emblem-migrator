@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
   "license": "MIT",
+  "bin": {
+    "emblem-migrator": "index.js"
+  },
   "files": [
     "index.js"
   ],
