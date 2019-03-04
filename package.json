@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
   "license": "MIT",
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "emblem": "^0.12.1",
     "globby": "^9.1.0",
