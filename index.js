@@ -8,8 +8,11 @@ const prettier = require('prettier');
 const ProgressBar = require('progress');
 
 async function run() {
-  console.log(' 🔍  Looking for Emblem.js files...');
-  let paths = await globby(['./**/*.{em,embl,emblem}']);
+  let cwd = path.resolve(process.argv[2] ? process.argv[2] : process.cwd());
+
+  console.log(` 🔍  Looking for Emblem.js files in ${cwd}...`);
+  let pattern = path.join(cwd, '**/*.{em,embl,emblem}');
+  let paths = await globby([pattern]);
 
   if (paths.length === 0) {
     console.log(' ⚠️   No Emblem.js files were found!');

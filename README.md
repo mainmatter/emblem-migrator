@@ -8,13 +8,12 @@ Usage
 ------------------------------------------------------------------------------
 
 ```bash
-npx emblem-migrator
+npx emblem-migrator [PATH]
 ```
 
 Running the above command will automatically download the migrator from [npm](https://www.npmjs.com/)
-and run it for all Emblem.js files in the current folder. Other folders are
-currently not supported, but pull requests to add input path command line
-arguments are welcome!
+and run it for all Emblem.js files in the current folder. If you pass a
+different path it will look for all Emblem.js files in that folder.
 
 
 Related
