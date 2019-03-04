@@ -9,7 +9,7 @@ const ProgressBar = require('progress');
 
 async function run() {
   console.log(' 🔍  Looking for Emblem.js files...');
-  let paths = await globby(['app/**/*.{em,embl,emblem}']);
+  let paths = await globby(['./**/*.{em,embl,emblem}']);
 
   console.log(` ⚙️   Converting ${paths.length} files to Handlebars...`);
   console.log();
