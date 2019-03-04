@@ -6,6 +6,7 @@
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "emblem": "^0.12.1",
     "globby": "^9.1.0"
   }
 }
