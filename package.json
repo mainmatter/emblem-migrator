@@ -1,6 +1,6 @@
 {
   "name": "emblem-migrator",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Migrate Emblem.js to pretty Handlebars files",
   "main": "index.js",
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
