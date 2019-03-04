@@ -11,6 +11,11 @@ async function run() {
   console.log(' 🔍  Looking for Emblem.js files...');
   let paths = await globby(['./**/*.{em,embl,emblem}']);
 
+  if (paths.length === 0) {
+    console.log(' ⚠️   No Emblem.js files were found!');
+    return;
+  }
+
   console.log(` ⚙️   Converting ${paths.length} files to Handlebars...`);
   console.log();
 
