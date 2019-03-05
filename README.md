@@ -18,6 +18,14 @@ If you pass a different path it will look for all Emblem.js files in that
 folder and its subfolders. `PATH` can also be the path to a single file.
 
 
+Known Issues
+------------------------------------------------------------------------------
+
+- Due to the way the Emblem.js parser works we can't convert Emblem.js comments
+  to Handlebars comments. The comments will be ignored by the parser and do not
+  show up in the resulting Handlebars template.
+
+
 Related
 ------------------------------------------------------------------------------
 
