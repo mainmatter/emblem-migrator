@@ -3,6 +3,7 @@ emblem-migrator
 
 Migrate Emblem.js to pretty Handlebars files
 
+![Screenshot of emblem-migrator](screenshot.png)
 
 Usage
 ------------------------------------------------------------------------------
