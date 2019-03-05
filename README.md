@@ -13,8 +13,9 @@ npx emblem-migrator [PATH]
 ```
 
 Running the above command will automatically download the migrator from [npm](https://www.npmjs.com/)
-and run it for all Emblem.js files in the current folder. If you pass a
-different path it will look for all Emblem.js files in that folder.
+and run it for all Emblem.js files in the current folder and any subfolders.
+If you pass a different path it will look for all Emblem.js files in that
+folder and its subfolders. `PATH` can also be the path to a single file.
 
 
 Related

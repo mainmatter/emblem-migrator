@@ -8,21 +8,31 @@ const prettier = require('prettier');
 const ProgressBar = require('progress');
 
 async function run() {
-  let cwd = path.resolve(process.argv[2] ? process.argv[2] : process.cwd());
+  let inputPath = process.argv[2];
 
-  console.log(` 🔍  Looking for Emblem.js files in ${cwd}...`);
-  let pattern = path.join(cwd, '**/*.{em,embl,emblem}');
-  let paths = await globby([pattern]);
+  let paths, progressbar;
+  if (inputPath && isFile(inputPath)) {
+    paths = [inputPath];
 
-  if (paths.length === 0) {
-    console.log(' ⚠️   No Emblem.js files were found!');
-    return;
+    console.log(` ⚙️   Converting "${path.basename(inputPath)}" to Handlebars...`);
+  } else {
+    let cwd = path.resolve(inputPath ? inputPath : process.cwd());
+
+    console.log(` 🔍  Looking for Emblem.js files in ${cwd}...`);
+    let pattern = path.join(cwd, '**/*.{em,embl,emblem}');
+    paths = await globby([pattern]);
+
+    if (paths.length === 0) {
+      console.log(' ⚠️   No Emblem.js files were found!');
+      return;
+    }
+
+    console.log(` ⚙️   Converting ${paths.length} files to Handlebars...`);
+    console.log();
+
+    progressbar = new ProgressBar(' [:bar] :percent :etas ', { total: paths.length });
   }
 
-  console.log(` ⚙️   Converting ${paths.length} files to Handlebars...`);
-  console.log();
-
-  let progressbar = new ProgressBar(' [:bar] :percent :etas ', { total: paths.length });
   for (let oldPath of paths) {
     // convert path to `.hbs` extension
     let oldExtension = path.extname(oldPath);
@@ -43,11 +53,21 @@ async function run() {
     // remove old Emblem.js template file
     fs.unlinkSync(oldPath);
 
-    progressbar.tick();
+    if (progressbar) {
+      progressbar.tick();
+    }
   }
 
-  progressbar.terminate();
+  if (progressbar) {
+    progressbar.terminate();
+  }
+
   console.log(' ✅  Done!');
+}
+
+function isFile(path) {
+  let stat = fs.statSync(path);
+  return stat && stat.isFile();
 }
 
 run().catch(error => {
