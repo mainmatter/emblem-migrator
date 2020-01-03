@@ -45,7 +45,7 @@ async function run() {
     let hbs = Emblem.compile(emblem, { quiet: true });
 
     // run Handlebars template through `prettier`
-    let prettyHbs = prettier.format(hbs, { parser: 'glimmer' });
+    let prettyHbs = prettier.format(hbs, { parser: 'glimmer', useTabs: true });
 
     // write new Handlebars template file
     fs.writeFileSync(newPath, prettyHbs, 'utf8');
