@@ -38,5 +38,5 @@ Related
 License
 ------------------------------------------------------------------------------
 
-emblem-migrator is developed by and &copy; [simplabs GmbH](http://simplabs.com) and
+emblem-migrator is developed by and &copy; [Mainmatter GmbH](http://mainmatter.com) and
 contributors. It is released under the [MIT License](https://github.com/simplabs/emblem-migrator/blob/master/LICENSE.md).
